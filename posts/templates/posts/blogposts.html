@@ -4,10 +4,17 @@
 {% block content %}
 
 
-<div>
-  Welcome to The BlogPOsts page
+<div class="main-container">
+  <div class="topbar">
+    <h1 class="title">Blogpost of user 1</h1>
+    <a class="btn btn-primary" href="{% url 'create' %}">Create Blogpost</a>
+  </div>
+  <div>
+    space for all posts
+  </div>
+
+
 </div>
-<a href="{% url 'home' %}">Link to Home</a>
 
 
 {% endblock %}

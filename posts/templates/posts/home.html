@@ -3,13 +3,46 @@
 
 {% block content %}
 
+<div class="main-container">
+  <div class="topbar">
+    <h1 class="title">Welcome to our Blog</h1>
+
+  </div>
+
+  {% if blogscount == 0 %}
+  <p>There are no Blog Post yet</p>
+  {% else %}
+  <div>
+    {% for blog in blogs%}
+    <div class="article">
+      <div class="article-image"></div>
+      <div class="article-content">
+        <h2>{{blog.title}}</h2>
+        <div class="article-date">
+          <p>{{blog.created_on | date:'F j, Y'}}</p>
+
+        </div>
+        <p>{{blog.content | truncatechars:200}}</p>
+
+      </div>
 
 
-<div>
+    </div>
+    {% endfor %}
 
-  Welcome to The Home page
+  </div>
+  {% endif %}
+
+
+
+
+
+
 </div>
-<a href="{% url 'blogposts' %}">Link to BlogPosts</a>
+
+
+
+
 
 
 
